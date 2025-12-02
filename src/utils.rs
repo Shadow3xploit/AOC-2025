@@ -39,12 +39,7 @@ fn supports_color() -> bool {
 /// // Use a specific input file
 /// let result = run_puzzle(1, 1, Some("inputs/day01_example.txt"), solve).unwrap();
 /// ```
-pub fn run_puzzle<F>(
-    day: i32,
-    part: i32,
-    input_path: Option<&str>,
-    solve: F,
-) -> io::Result<String>
+pub fn run_puzzle<F>(day: i32, part: i32, input_path: Option<&str>, solve: F) -> io::Result<String>
 where
     F: Fn(&str) -> String,
 {
@@ -81,7 +76,10 @@ where
         Ok(content) => content,
         Err(err) => {
             if use_color {
-                eprintln!("\x1b[31m[ERROR]\x1b[0m Could not read input file '{}': {}", path, err);
+                eprintln!(
+                    "\x1b[31m[ERROR]\x1b[0m Could not read input file '{}': {}",
+                    path, err
+                );
             } else {
                 eprintln!("[ERROR] Could not read input file '{}': {}", path, err);
             }

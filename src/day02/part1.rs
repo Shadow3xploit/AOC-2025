@@ -14,14 +14,11 @@ pub fn solve(input: &str) -> String {
     let ranges = input.split(",");
     for range in ranges {
         let ids: Vec<&str> = range.split('-').collect();
-        for id in collect_invalid_ids_in_range(
-            ids[0].parse().unwrap(), 
-            ids[1].parse().unwrap()
-        ) {
+        for id in collect_invalid_ids_in_range(ids[0].parse().unwrap(), ids[1].parse().unwrap()) {
             result += id;
         }
     }
-    
+
     result.to_string()
 }
 
@@ -133,7 +130,10 @@ mod tests {
 
     #[test]
     fn test_range_1188511880_1188511890() {
-        assert_eq!(collect_invalid_ids_in_range(1188511880, 1188511890), vec![1188511885]);
+        assert_eq!(
+            collect_invalid_ids_in_range(1188511880, 1188511890),
+            vec![1188511885]
+        );
     }
 
     #[test]
@@ -143,7 +143,10 @@ mod tests {
 
     #[test]
     fn test_range_1698522_1698528() {
-        assert_eq!(collect_invalid_ids_in_range(1698522, 1698528), Vec::<i64>::new());
+        assert_eq!(
+            collect_invalid_ids_in_range(1698522, 1698528),
+            Vec::<i64>::new()
+        );
     }
 
     #[test]
@@ -153,22 +156,34 @@ mod tests {
 
     #[test]
     fn test_range_38593856_38593862() {
-        assert_eq!(collect_invalid_ids_in_range(38593856, 38593862), vec![38593859]);
+        assert_eq!(
+            collect_invalid_ids_in_range(38593856, 38593862),
+            vec![38593859]
+        );
     }
 
     #[test]
     fn test_range_565653_565659() {
-        assert_eq!(collect_invalid_ids_in_range(565653, 565659), Vec::<i64>::new());
+        assert_eq!(
+            collect_invalid_ids_in_range(565653, 565659),
+            Vec::<i64>::new()
+        );
     }
 
     #[test]
     fn test_range_824824821_824824827() {
-        assert_eq!(collect_invalid_ids_in_range(824824821, 824824827), Vec::<i64>::new());
+        assert_eq!(
+            collect_invalid_ids_in_range(824824821, 824824827),
+            Vec::<i64>::new()
+        );
     }
 
     #[test]
     fn test_range_2121212118_2121212124() {
-        assert_eq!(collect_invalid_ids_in_range(2121212118, 2121212124), Vec::<i64>::new());
+        assert_eq!(
+            collect_invalid_ids_in_range(2121212118, 2121212124),
+            Vec::<i64>::new()
+        );
     }
 
     #[test]

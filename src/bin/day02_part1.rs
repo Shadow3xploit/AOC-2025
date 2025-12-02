@@ -1,5 +1,5 @@
-use aoc2025::utils::run_puzzle;
 use aoc2025::day02::part1::solve;
+use aoc2025::utils::run_puzzle;
 
 /// Entry point for Advent of Code Day 2, Part 1.
 ///
